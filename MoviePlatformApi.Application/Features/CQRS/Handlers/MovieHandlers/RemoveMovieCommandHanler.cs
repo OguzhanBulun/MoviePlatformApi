@@ -18,7 +18,7 @@ namespace MoviePlatformApi.Application.Features.CQRS.Handlers.MovieHandlers
 
         public async void Handle(RemoveMovieCommand command)
         {
-            var dataToDelete = _context.Movies.FindAsync(command.MovieId);
+            var dataToDelete = await _context.Movies.FindAsync(command.MovieId);
             _context.Movies.Remove(dataToDelete);
             await _context.SaveChangesAsync();
         }

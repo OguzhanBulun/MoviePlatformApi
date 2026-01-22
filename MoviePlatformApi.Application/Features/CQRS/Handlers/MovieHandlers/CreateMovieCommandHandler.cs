@@ -21,7 +21,7 @@ namespace MoviePlatformApi.Application.Features.CQRS.Handlers.MovieHandlers
 
         public async void Handle(CreateMovieCommand command)
         {
-            _context.Add(new Movie
+            _context.Movies.Add(new Movie
             {
                 CoverImageUrl = command.CoverImageUrl,
                 CreatedYear = command.CreatedYear,
